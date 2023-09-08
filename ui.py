@@ -1,51 +1,26 @@
 import streamlit as st
-from streamlit_calendar import calendar
+from streamlit_agenda_view import st_agenda_view
 
-st.title('PRICING UI TRIAL')
+st.title('Calendar View in Streamlit')
 
-calendar_options = {
-    "headerToolbar": {
-        "left": "today prev,next",
-        "center": "title",
-        "right": "resourceTimelineDay,resourceTimelineWeek,resourceTimelineMonth",
-    },
-    "slotMinTime": "06:00:00",
-    "slotMaxTime": "18:00:00",
-    "initialView": "resourceTimelineDay",
-    "resourceGroupField": "building",
-    "resources": [
-        {"id": "a", "building": "Building A", "title": "Building A"},
-        {"id": "b", "building": "Building A", "title": "Building B"},
-        {"id": "c", "building": "Building B", "title": "Building C"},
-        {"id": "d", "building": "Building B", "title": "Building D"},
-        {"id": "e", "building": "Building C", "title": "Building E"},
-        {"id": "f", "building": "Building C", "title": "Building F"},
-    ],
-}
-
-calendar_events = [
+# Create a list of events (you can fetch these from your data)
+events = [
     {
-        "title": "Event 1",
-        "start": "2023-07-31T08:30:00",
-        "end": "2023-07-31T10:30:00",
-        "resourceId": "a",
+        'title': 'Meeting 1',
+        'date': '2023-08-15',
+        'description': 'Discuss project updates',
     },
     {
-        "title": "Event 2",
-        "start": "2023-07-31T07:30:00",
-        "end": "2023-07-31T10:30:00",
-        "resourceId": "b",
+        'title': 'Meeting 2',
+        'date': '2023-08-20',
+        'description': 'Planning session',
     },
     {
-        "title": "Event 3",
-        "start": "2023-07-31T10:40:00",
-        "end": "2023-07-31T12:30:00",
-        "resourceId": "a",
+        'title': 'Conference',
+        'date': '2023-08-25',
+        'description': 'Tech conference',
     },
 ]
 
-# Create the calendar widget
-calendar_widget = calendar(events=calendar_events, options=calendar_options)
-
-# Display the calendar
-st.write(calendar_widget)
+# Display the calendar view
+st_agenda_view(events)
