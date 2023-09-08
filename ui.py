@@ -1,7 +1,7 @@
 import streamlit as st
 
-# Create a slider-style dropdown menu
-selected_option = st.select_slider('Select an option:', options=['Option 1', 'Option 2', 'Option 3'])
+# Create a multi-select dropdown menu with default values
+selected_options = st.multiselect('Select one or more options:', ['Option 1', 'Option 2', 'Option 3'])
 
-# Display the selected option
-st.write('You selected:', selected_option)
+# Display the selected options
+st.write('You selected:', selected_options)
