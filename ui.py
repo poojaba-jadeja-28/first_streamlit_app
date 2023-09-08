@@ -1,5 +1,4 @@
 import streamlit as st
-!pip install streamlit-calendar
 from streamlit_calendar import calendar
 
 calendar_options = {
@@ -42,11 +41,12 @@ calendar_events = [
     },
 ]
 
+# Create a dropdown menu with a list of countries
+selected_country = st.selectbox('Select a country:', ['USA', 'Canada', 'UK', 'Australia'])
+
+# Display the selected country
+st.write('You selected:', selected_country)
+
+# Display the calendar
 calendar = calendar(events=calendar_events, options=calendar_options)
 st.write(calendar)
-
-# # Create a dropdown menu with a list of countries
-# selected_country = st.selectbox('Select a country:', ['USA', 'Canada', 'UK', 'Australia'])
-
-# # Display the selected country
-# st.write('You selected:', selected_country)
