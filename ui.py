@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit-calendar
+!pip install streamlit-calendar
 from streamlit_calendar import calendar
 
 calendar_options = {
