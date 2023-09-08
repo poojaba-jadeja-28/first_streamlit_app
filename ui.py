@@ -1,8 +1,7 @@
-import streamlit
-
+import streamlit as st
 from streamlit_calendar import calendar
 
-streamlit.title('PRICING UI TRIAL')
+st.title('PRICING UI TRIAL')
 
 calendar_options = {
     "headerToolbar": {
@@ -23,6 +22,7 @@ calendar_options = {
         {"id": "f", "building": "Building C", "title": "Building F"},
     ],
 }
+
 calendar_events = [
     {
         "title": "Event 1",
@@ -44,5 +44,8 @@ calendar_events = [
     },
 ]
 
-calendar = calendar(events=calendar_events, options=calendar_options)
-st.write(calendar)
+# Create the calendar widget
+calendar_widget = calendar(events=calendar_events, options=calendar_options)
+
+# Display the calendar
+st.write(calendar_widget)
